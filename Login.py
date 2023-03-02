@@ -61,7 +61,6 @@ inputPassword.grid(row=1,column=1)
 
 #Dejamos el correo por defecto para que pueda ingresar
 inputCorreo.insert(0,myUsuer.getCorreo())
-
 #Para el boton 
 btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21",command=ingresar)
 btnIngresar.pack()
