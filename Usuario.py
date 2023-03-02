@@ -2,8 +2,8 @@ class Usuario:
      #Constructor
      
    def  __init__(self):
-        self.__correo = "" 
-        self.__password = ""
+        self.__correo = "adminfrommylogin@ump.com" 
+        self.__password = "ÑandúG@ming235"
     
     #Declaramos metodos SETTER y GETTER
         def setCorreo(self,Correo):
