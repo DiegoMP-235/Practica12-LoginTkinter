@@ -3,6 +3,9 @@ from tkinter import Tk,Frame,Entry,Label,Button,messagebox
 #https://recursospython.com/guias-y-manuales/caja-de-texto-entry-tkinter/
 #Para mostrar lo contraseña como oculta
 #entrada = Entry(show="*")
+def obtenPasswordtxt():
+    print(inputCorreo.get())
+    #return inputCorreo.get()
 
 #Instanciamos objeto tipo Usuario
 myUsuer = Usuario()
@@ -38,8 +41,11 @@ labelPassword.grid(row = 1,column = 0)
 inputPassword = Entry(FrameInputs,show=CaracterOculto)
 inputPassword.grid(row=1,column=1)
 
+#Dejamos el correo por defecto para que pueda ingresar
+inputCorreo.insert(0,myUsuer.getCorreo())
+
 #Para el boton 
-btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21")
+btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21",command=obtenPasswordtxt)
 btnIngresar.pack()
 
 #mostramos la ventana
