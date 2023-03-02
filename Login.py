@@ -13,12 +13,17 @@ def obtenPasswordtxt():
 def validaCamposNoVacios():
     return(inputCorreo.get() != "" and inputPassword.get() != "")
 
+def compruebaCredenciales(Correo,Password):
+    return (myUsuer.getCorreo()==Correo and myUsuer.getPassword()==Password)
+
 def ingresar():
     if(validaCamposNoVacios()):
-        print("Campos llenos")
+        if(compruebaCredenciales(obtenCorreotxt(),obtenPasswordtxt())): #En caso de que las credenciales coincidan
+            messagebox.showinfo("Inicio exitoso!","Bienvenido al sistema!")
+        else: #En caso de que las credenciales no coincidan
+            messagebox.showerror("Ha ocurrido un error :/","Las claves de acceso no coinciden")    
     else:
-        print("Campos vacios")    
-    #messagebox.showinfo("Procesando","Ingresando...")
+        messagebox.showwarning("Faltan campos","Por favor completa todos los campos")    
     
 #Instanciamos objeto tipo Usuario
 myUsuer = Usuario()
