@@ -42,6 +42,5 @@ inputPassword.grid(row=1,column=1)
 btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21")
 btnIngresar.pack()
 
-
 #mostramos la ventana
 ventana.mainloop()
