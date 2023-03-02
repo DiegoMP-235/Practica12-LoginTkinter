@@ -3,10 +3,23 @@ from tkinter import Tk,Frame,Entry,Label,Button,messagebox
 #https://recursospython.com/guias-y-manuales/caja-de-texto-entry-tkinter/
 #Para mostrar lo contraseña como oculta
 #entrada = Entry(show="*")
-def obtenPasswordtxt():
-    print(inputCorreo.get())
-    #return inputCorreo.get()
+def obtenCorreotxt():
+    #print(inputCorreo.get())
+    return inputCorreo.get()
 
+def obtenPasswordtxt():
+    return inputPassword.get()    
+
+def validaCamposNoVacios():
+    return(inputCorreo.get() != "" and inputPassword.get() != "")
+
+def ingresar():
+    if(validaCamposNoVacios()):
+        print("Campos llenos")
+    else:
+        print("Campos vacios")    
+    #messagebox.showinfo("Procesando","Ingresando...")
+    
 #Instanciamos objeto tipo Usuario
 myUsuer = Usuario()
 CaracterOculto = "■"
@@ -31,21 +44,21 @@ FrameButton.pack(expand=True,fill="both")
 labelCorreo = Label(FrameInputs,text="Correo:")
 labelCorreo.grid(row = 0,column = 0)
 
-inputCorreo = Entry(FrameInputs)
+inputCorreo = Entry(FrameInputs,width=35)
 inputCorreo.grid(row=0,column=1)
 
 #Campo para la password
 labelPassword = Label(FrameInputs,text="Contraseña:")
 labelPassword.grid(row = 1,column = 0)
 
-inputPassword = Entry(FrameInputs,show=CaracterOculto)
+inputPassword = Entry(FrameInputs,show=CaracterOculto,width=25)
 inputPassword.grid(row=1,column=1)
 
 #Dejamos el correo por defecto para que pueda ingresar
 inputCorreo.insert(0,myUsuer.getCorreo())
 
 #Para el boton 
-btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21",command=obtenPasswordtxt)
+btnIngresar = Button(FrameButton,text="Ingresar",bg="#0dff21",command=ingresar)
 btnIngresar.pack()
 
 #mostramos la ventana
